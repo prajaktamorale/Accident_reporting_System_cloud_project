@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>    	
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" />
+      <link rel="stylesheet" type="text/css" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.css" />
+    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.Default.css" />
+    
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    
+     
+    <link rel="stylesheet" href="assets/css/plugins/jquery-jvectormap-2.0.3.css">
+     
+    <link rel="stylesheet" href="assets/css/plugins/bootstrap-wysihtml5-0.0.2.css">
+     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-responsive.min.css">
+     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600"
+        rel="stylesheet">
+     <link href="assets/bootstrap/css/font-awesome.css" rel="stylesheet">
+      <link rel="stylesheet" href="assets/bootstrap/css/style.css">
+      
+      
+       <script type='text/javascript' src='http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js?2'>
+    </script>
+    <script type='text/javascript' src='http://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster.js'>
+    </script>
+     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.js">
+    </script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js">
+    </script>
+    <!--CUSTOM ANGULAR-->
+    <script type="text/javascript"src="/controllers/providerDashboardCtrl.js"></script>
+ 	<script>
+		function signout() {
+		 window.location.assign("/login");
+		 }
+	</script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-google-chart/0.1.0/ng-google-chart.min.js" type="text/javascript">
+      </script>
+   
+    <style>
+      #markmap {
+        height:700px;
+        width:auto;
+      }
+      .navbar .brand {
+	    font-weight: 600;
+	    position: relative;
+	    top: 2px;
+	}
+   
+    </style>
+  </head>
+  <body class="hold-transition skin-black">
+  	<div class="navbar navbar-fixed-top">
+  		<div class="navbar-inner">
+  			<div class="container">
+  				<a class="brand" href="javascript:signout();">AMPere Accident Reporting System </a>
+  				<div class="nav-collapse">
+					<ul class="nav pull-right">
+						<li class="">						
+							<a href="javascript:signout();" class="">Sign Out</a>
+						</li>
+					</ul>
+		
+				</div><!--/.nav-collapse -->	
+  			</div>
+  		</div>	
+  	</div>
+   
+      <div class="subnavbar">
+		  <div class="subnavbar-inner">
+		    <div class="container">
+		      <ul class="mainnav">
+		         <li class="active"><a href="#/addSensor"><i class="icon-plus"></i><span>Add Sensor</span> </a> </li>
+		       </ul>
+		    </div>
+		  </div>
+		</div><br>
+		
+		<div class="main">
+			<div class="main-inner">
+			<div class="row">
+									
+	    		<div class="container">
+	    			 
+	       						<div class="row">
+									<div ng-view> </div>
+								</div><br>
+								
+        			</div>
+        			
+        			<div class="span10" ng-controller="reportCtrl">
+        				<h3 style="margin-left:50%">Sensor Health</h3><br>
+								     	<div class="span3">
+									     	
+									     	<div google-chart chart="gpsHealth" ></div> 
+									     </div>
+									     <div class="span3">
+								     			<div google-chart chart="speedHealth" ></div> 
+								     	   </div>
+									     <div class="span3">
+								     		<div google-chart chart="cameraHealth" ></div> 
+								     	</div>
+							     </div>
+			        		 </div>
+        		</div>
+        	</div>
+       
+        
+		 
+        
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js">
+      </script>
+      <!-- jQuery UI 1.11.4 -->
+      <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js">
+      </script>
+      <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+      <script>
+        $.widget.bridge('uibutton', $.ui.button);
+      </script>
+      
+      
+      <script src="assets/js/plugins/jquery.sparkline.min.js">
+      </script>
+      
+      <script src="assets/js/plugins/bootstrap-wysihtml5-0.0.2.js">
+      </script>
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-google-chart/0.1.0/ng-google-chart.min.js" type="text/javascript">
+      </script>
+       
+      <script src="/card-master/lib/js/card.js">
+      </script>
+      <script>
+        new Card({
+          form: document.querySelector('form'),
+          container: '.card-wrapper'
+        }
+                );
+      </script> 
+</body>
+</html>

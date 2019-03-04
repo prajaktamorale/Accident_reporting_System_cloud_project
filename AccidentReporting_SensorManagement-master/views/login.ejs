@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+      <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-responsive.min.css">
+      <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
+      <link href="assets/bootstrap/css/font-awesome.css" rel="stylesheet">
+      
+      <link href="assets/bootstrap/css/pages/signin.css" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" href="assets/bootstrap/css/style.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.js"></script>
+      <title>Login</title>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <script type="text/javascript" src="controllers/mainCtrl.js"></script>
+      <style>
+         .navbar .brand {
+         font-weight: 600;
+         position: relative;
+         top: 2px;
+         }
+      </style>
+   </head>
+   <body ng-app="sensorApp" ng-controller="mainPageCtrl">
+      <div class="alert alert-success col-md-12" id="success-alert1" style="display: none ">
+         <center> <strong> Successful Login</strong></center>
+      </div>
+      <div class="alert alert-success col-md-12" id="failure-alert" style="display: none ">
+         <center> <strong> Email ID already exists. Please enter a correct Email. </strong></center>
+      </div>
+      
+         <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+               <div class="container">
+                  <a class="brand" href="" ng-click="index()">AMPere Accident Reporting System </a>
+                  
+                  		<div class="nav-collapse">
+							<ul class="nav pull-right">
+								
+								<li class="">						
+									<a href="" ng-click="index()" class="">
+										Don't have an account?
+									</a>
+									
+								</li>
+								
+								<li class="">						
+									<a href="#" ng-click="index()" class="">
+										<i class="icon-chevron-left"></i>
+										Back to Homepage
+									</a>
+									
+								</li>
+							</ul>
+				
+			</div><!--/.nav-collapse -->	
+               </div>
+            </div>
+         </div>
+         
+         <div class="account-container">
+            <div class="content clearfix">
+              	<form id="edit-profile" class="form-horizontal">
+									 
+						<h3 style="margin-left:40%"><b>Member Login</b></h3>
+						<br><br>
+						<div class="control-group">											
+							<label class="control-label" for="email"><b>Email Address</b></label>
+							<div class="controls">
+								 <input type="text" name="email" id="email" class="span4" placeholder="Email" ng-model="email" />
+							</div> <!-- /controls -->				
+						</div> <!-- /control-group -->
+							
+						<div class="control-group">											
+							<label class="control-label" for="password"><b>Password</b></label>
+							<div class="controls">
+										 <input type="password" name="password" id="password"  class="span4"  placeholder="Password" ng-model ="password"/>
+						
+							</div> <!-- /controls -->				
+						</div> <!-- /control-group -->
+										
+										
+                                        
+                                        
+                        <div class="control-group">											
+							<label class="control-label"><b>Login As<b></label>
+							
+                            
+                            <div class="controls">
+                            <label class="radio inline">
+                              <input type="radio" name="userLogin" id="userLogin" value="userLogin" ng-model="login">&nbsp;&nbsp;&nbsp;User
+                            </label>
+                            
+                            <label class="radio inline">
+                              <input type="radio" name="providerLogin" id="providerLogin" value="providerLogin" ng-model="login">&nbsp;&nbsp;&nbsp;Vendor
+                            </label>
+                            
+                            <label class="radio inline">
+                              <input type="radio" name="adminLogin" id="adminLogin" value="adminLogin" ng-model="login" >&nbsp;&nbsp;&nbsp;Admin
+                            </label>
+                          </div>	<!-- /controls -->			
+						</div> <!-- /control-group -->
+                       <br />
+						 
+							<button type="submit" class="btn btn-primary btn-large" value="Login" ng-click ="userLogin()"  style="margin-left:40%">Submit</button> 
+							 
+					 
+					 
+				</form>
+            </div>
+            <!-- /content -->
+         </div>
+         <!-- /account-container -->
+     
+   </body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "AccidentReporting",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "angular-google-chart": "^0.1.0",
+    "ejs": "*",
+    "express": "3.2.6"
+  }
+}

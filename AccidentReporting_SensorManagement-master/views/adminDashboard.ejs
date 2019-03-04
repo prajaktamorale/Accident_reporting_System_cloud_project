@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>  
+	
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- Tell the browser to be responsive to screen width -->
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	 <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+   
+	<!-- Bootstrap 3.3.6 -->
+	<link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" />
+	 
+    <!-- bootstrap wysihtml5 - text editor -->
+    <link rel="stylesheet" href="assets/css/plugins/bootstrap-wysihtml5-0.0.2.css">
+      <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-responsive.min.css">
+     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600"
+        rel="stylesheet">
+     <link href="assets/bootstrap/css/font-awesome.css" rel="stylesheet">
+     <link rel="stylesheet" href="assets/bootstrap/css/style.css">
+	 <link href="assets/bootstrap/css/pages/dashboard.css" rel="stylesheet">
+
+	<title>Admin Dashboard</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	   		
+	<script type="text/javascript" src="/controllers/adminDashboardCtrl.js"></script>
+    
+	<script>
+		function signout() {
+		 window.location.assign("/login");
+		 }
+	</script>
+	<style>
+	#map_wrapper {
+    height: 400px;
+}
+
+#map_canvas {
+    width: 100%;
+    height: 100%;
+}
+  .navbar .brand {
+	    font-weight: 600;
+	    position: relative;
+	    top: 2px;
+	}
+   
+	
+	</style>
+
+	</head>
+	<body class="hold-transition skin-black">
+	 
+	 <div class="navbar navbar-fixed-top">
+  		<div class="navbar-inner">
+  			<div class="container">
+  				<a class="brand" href="javascript:signout();">Admin User Console</a>
+	  				<div class="nav-collapse">
+						<ul class="nav pull-right">
+							<li class="">						
+								<a href="javascript:signout();" class="">Sign Out</a>
+							</li>
+						</ul>
+			
+					</div><!--/.nav-collapse -->	
+  			</div>
+  		</div>	
+  	</div>
+   
+      <div class="subnavbar">
+		  <div class="subnavbar-inner">
+		    <div class="container">
+		      <ul class="mainnav">
+		      	
+		        <!--<li><a href="#/addSensor"><i class="icon-plus"></i><span>Add Sensor</span> </a> </li>-->
+		        <li class="active"><a href="#/manageSensor"><i class="icon-wrench "></i><span>Sensors</span> </a> </li> 
+			    <li class="active"><a href="#/userlist"><i class="icon-user"></i><span>Users</span> </a> </li>
+			    <li class="active"><a href="#/adminBilling"><i class="icon-credit-card "></i><span>Payment</span> </a> </li>
+		    </div>
+		  </div>
+		</div><br>
+		
+		<div class="main">
+			<div class="main-inner" >
+				<div class="container">
+					
+					<div class="row">
+						<div class="span12">
+							<section class="content">
+							 	<div class="box">
+						            <div class="box-body no-padding">
+						           
+						            	<br>
+							    		<div class="row">
+											<div ng-view> </div>
+										</div><br>
+										<div class="row text-center"> 
+												 <h2 style="margin-left:40%">Accident Locations</h2> 
+								    	</div>
+						            	<div class="row">
+										    <div class="col-md-12">
+										   		<div id="map_wrapper">
+												    <div id="map_canvas" class="mapping"></div>
+												</div>
+											</div>
+										</div>
+						            </div>
+						        </div>
+							</section>
+						</div>
+					</div>
+				</div>
+			</div>
+	 </div>
+	 
+	 
+	
+	 
+	 
+		<!--<div class="content-wrapper">
+       		
+			 
+			<section class="content">
+				 <div class="row">
+				 	<div class="col-lg-2 col-xs-3">
+						 <a href="#/addSensor"><div class="info-box">
+		   					  <span class="info-box-icon bg-aqua"><i class="fa fa-plus"></i></span>
+							  <div class="info-box-content">
+							     <span class="info-box-text">Add Sensor</span>
+							  </div> 
+						 </div> </a>
+					</div>
+					
+					<div class="col-lg-2 col-xs-3">
+					   <a href="#/manageSensor"><div class="info-box">
+		   					  <span class="info-box-icon bg-red"><i class="fa fa-th-list"></i></span>
+							  <div class="info-box-content">
+							   <span class="info-box-text">List Sensors</span>
+							  </div> 
+						 </div> 
+						 </a>
+				 	</div>
+				 	
+					<div class="col-lg-2 col-xs-3">
+					   <a href="#/userlist">
+					   <div class="info-box">
+		   					  <span class="info-box-icon bg-yellow"><i class="fa fa-user"></i></span>
+							  <div class="info-box-content">
+							   <span class="info-box-text">List Users</span></a>
+							  </div> 
+						 </div></a>
+					</div>
+					
+					<div class="col-lg-2 col-xs-3">
+					   <a href="#/manageSensorHub"><div class="info-box">
+		   					  <span class="info-box-icon bg-green"><i class="fa fa-th-list"></i></span>
+							  <div class="info-box-content">
+							   <span class="info-box-text">Manage Hubs</span>
+							  </div> 
+						 </div> 
+						 </a>
+				 	</div>
+					
+						<div class="col-lg-2 col-xs-3">
+					   <a href="#/adminBilling"><div class="info-box">
+		   					  <span class="info-box-icon bg-green"><i class="fa fa-th-list"></i></span>
+							  <div class="info-box-content">
+							   <span class="info-box-text">Manage Payment</span>
+							  </div> 
+						 </div> 
+						 </a>
+				 	</div>
+				 </div>
+				 
+				<div class="box">
+		            <div class="box-body no-padding">
+		            	 
+			    		<div class="row">
+							<div ng-view> </div>
+						</div><br>
+						<div class="row" style="margin-left:40%"> 
+		            		 <h2>Accident Locations<small> Admin User Console </small></h2> 
+			    		</div>
+		            	<div class="row">
+						    <div class="col-md-12">
+						   		<div id="map_wrapper">
+								    <div id="map_canvas" class="mapping"></div>
+								</div>
+							</div>
+						</div>
+		            </div>
+		        </div>
+			</section>
+			
+			
+		</div>-->
+	 
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<!-- jQuery UI 1.11.4 -->
+	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+	<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+	<script>
+	  $.widget.bridge('uibutton', $.ui.button);
+	</script>
+ 	 <!-- Bootstrap 3.3.6 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Sparkline -->
+    <script src="assets/js/plugins/jquery.sparkline.min.js"></script>
+    <!-- jvectormap -->
+    <script src="assets/js/plugins/jquery-jvectormap-2.0.3.min.js"></script>
+    <script src="assets/js/plugins/\jquery-jvectormap-world-mill-en.js"></script>
+    
+    <!-- Locate Current Location <script src="//maps.googleapis.com/maps/api/js?sensor=false&callback=initialize";-->
+   
+    <script src="assets/js/custom/accidents.js"> </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoUvJV4PdeoKtCZVsNP2Jnlr0bR_T5s28&callback=initialize"></script>
+    
+   
+    <!-- jQuery Knob Chart -->
+    <script src="assets/js/plugins/jquery.knob.js"></script>
+    <!-- daterangepicker -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+    <script src="assets/js/plugins/daterangepicker.js"></script>
+    <!-- datepicker -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
+    <!-- Bootstrap WYSIHTML5 -->
+    <script src="assets/js/plugins/bootstrap-wysihtml5-0.0.2.js"></script>
+    <!-- Slimscroll -->
+    <script src="assets/js/plugins/jquery.slimscroll.min.js"></script>
+    <!-- FastClick -->
+    <script src="assets/js/plugins/fastclick.js"></script>
+	<script src="assets/AdminLTE/js/app.min.js"></script>
+  </body>
+  </html>

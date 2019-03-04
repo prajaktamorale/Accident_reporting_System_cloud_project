@@ -1,0 +1,59 @@
+<div ng-controller = "addSensorCtrl">
+	<div class="alert alert-success span12" id="success-alert1" style="display: none ">
+	   <center> <strong> Successfully added the sensor</strong></center>
+	</div>
+	<div class="alert alert-danger span12" id="success-alert2" style="display: none ">
+	   <center> <strong> Sorry, actual sensor is not present in the location entered</strong></center>
+	</div>
+	<div class="alert alert-danger span12" id="failure-alert" style="display: none ">
+	   <center> <strong> Error while adding the sensor. Please try again </strong></center>
+	</div>
+	
+	<div class="row span12">
+	
+					<div class="widget-header">
+						<i class="icon-add"></i>
+						<h3>ADD Car Device <small>(Sensor Group)</small></h3>
+					</div> <!-- /widget-header --><br><br>
+	 	            <form class="form-horizontal">
+		               
+	                      	<div class="control-group">											
+								<label class="control-label" for="firstname">Sensor Group</label>
+								<div class="controls">
+									<input class="form-control" type="text" id="sensorName" name="sensorName" placeholder="Sensor Group Name" ng-model="sensorName" required />												
+	    						</div> <!-- /controls -->				
+							</div> <!-- /control-group -->
+					    
+					    	<div class="control-group">											
+								<label class="control-label" for="description">Description</label>
+								<div class="controls">
+								    <input class="form-control" type="text" id="description" name="description" placeholder="Description" ng-model="description" required />
+		                		</div> <!-- /controls -->				
+							</div> <!-- /control-group -->
+							
+		               		 <div class="control-group">											
+								<label class="control-label" for="user">User</label>
+								<div class="controls">
+								    <input class="form-control" type="text" id="user" name="user" placeholder="User" ng-model="user" required />
+		                		</div> <!-- /controls -->				
+							</div> <!-- /control-group -->
+		               		 
+		               		   <div class="controls">
+		               		    	<label>Sensor Status (On / Off)</label> 	
+	                                <label class="radio inline">
+	                                  <label><input type="radio" name="activate" id="active" value="active" ng-model="activate" checked/>Active</label>
+	                                </label>
+	                                
+	                                <label class="radio inline">
+	                                 <label><input type="radio" name="activate" id="inactive" value="inactive" ng-model="activate"/>Inactive</label>
+	                                </label>
+	                            </div>	<!-- /controls -->			
+            				  	<div class="form-actions">
+									<input type="submit" class="btn btn-primary btn-large" value="SUBMIT" ng-click="addSensor()"></input>
+               					</div>
+		               
+		            </form>
+		            <hr/>
+		         </div>
+            
+</div>

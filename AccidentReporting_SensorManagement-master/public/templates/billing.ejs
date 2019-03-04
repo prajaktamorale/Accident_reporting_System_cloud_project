@@ -1,0 +1,114 @@
+ 	<div ng-controller = "billingCtrl" ng-init ="billData();">
+		  <div>
+		    <section class="content">
+		    <h2>Proceed to Pay your bill</h2>
+		      <div class="row">
+		</div>
+		<div class="row span12">
+			<div class="box">
+		            <div class="box-header">
+		              <h3 class="box-title">Payment Invoice</h3>
+		            </div>
+		            <!-- /.box-header -->
+		            <div class="box-body no-padding">
+		 				 <table class = "table table-striped hover">
+												    <tr>                     
+												    	
+												    	<th>#</th>
+												      
+												       <th colspan="1">Type</th>
+												        <th colspan="1">Usage</th>
+													   <th colspan="1">Price($)</th>
+												    </tr>
+												    <tbody>
+												       <!--<tr ng-repeat="bill in billUsage" >                      
+												       	  
+												       	  <td>{{$index+1}}</td>
+												          <td>{{bill.type}}</td>
+												          <td>{{bill.usage}}</td>
+														  <td>{{bill.amount | currency}}</td>
+												     
+												       </tr>  -->
+												       <tr>
+												       <td></td>
+												       	<td>Notification</td>
+												       	<td>1</td>
+												       	<td>1$</td>
+												       	
+												       </tr>
+												                          
+												    </tbody>
+												    <tfoot>
+											            <tr>
+											                <th></th>
+												    	<th></th>
+												    	 
+											                <!--<th>Usage : {{ billUsage|total }} </th>
+											                <th>Total Amount : {{ billUsage|total:'amount'|currency }}</th>-->
+											                <th>Usage : 1 </th>
+											                <th>Total Amount : 1$</th
+											            </tr>
+											        </tfoot>
+												 </table>
+		           <br/>
+		           <section class="col-lg-3" style="margin-left:90%"">
+				    <button style="" class="btn-primary" data-toggle="modal" data-target="#popup">Pay Bill</button><br>
+				 </section>
+		            </div>
+		            <!-- /.box-body -->
+		          </div>
+		          <!-- /.box -->
+		</div>
+		 </section>
+		 
+		 </div>
+									
+		<div class="modal fade" id="popup" role="dialog">
+		    <div class="modal-dialog">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		          <h4 class="modal-title">Enter Card Details</h4>
+		        </div>
+		         <div class="modal-body">
+			        <div class="demo-container">
+				        <div class="card-wrapper"></div>
+								<br><br>
+							   	<div class="alert alert-success col-md-12" id="success-alert1" style="display: none ">
+					       			<center> <strong> Bill payment successful</strong></center>
+					       		</div>
+					       	
+					       		<div class="alert alert-danger col-md-12" id="failure-alert" style="display: none ">
+					       			<center> <strong> Error while paying the sensor. Please try again </strong></center>
+					       		</div>
+			       	
+						        <div class="form-container active">
+							            <form action="">
+							            	<div class="form-group">
+							            	<label for="firstname">Card Number:</label>
+							                <input placeholder="Card number" type="text" name="number" class="form-control ng-model="cardNumber">
+							                </div>
+											<div class="form-group">
+											<label for="firstname">Full Name:</label>
+							               	 <input placeholder="Full name" type="text" name="name" class="form-control" ng-model="cardHolderName">
+							                </div>
+							                <div class="form-group">
+							                	<label for="firstname"> Expiry:</label>
+							               		<input placeholder="MM/YY" type="text" name="expiry" class="form-control" ng-model="expiry">
+							                </div>
+							                <div class="form-group">
+							                	<label for="firstname">CVV:</label>
+							               	 	<input placeholder="CVC" type="text" name="cvc" class="form-control" ng-model="cvv">
+							                </div>
+							                <button type="submit" class="btn btn-primary" name="save" id="save" ng-click="paymentInvoice()">Pay</button>
+							          		<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+							            </form>
+						        </div>
+					    </div>
+			        </div>
+		      
+		    	</div>
+		  								
+	 

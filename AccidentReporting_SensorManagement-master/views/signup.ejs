@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<title>Sign Up</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+ <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-responsive.min.css">
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet">
+  <link href="assets/bootstrap/css/font-awesome.css" rel="stylesheet">
+  
+  <link href="assets/bootstrap/css/pages/signin.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="assets/bootstrap/css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.js"></script>
+      
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/skel.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+<!--CUSTOM ANGULAR-->
+<script type="text/javascript" src="controllers/mainCtrl.js"></script>
+			
+</head>
+<body ng-app="sensorApp" ng-controller="mainPageCtrl">
+<div id="page-wrapper">
+
+<!-- Header 
+<header id="header">
+	<h1><a href="" ng-click="index()" style="color:#fff !important">Ampere</a></h1>
+	<nav id="nav" >
+		<ul>
+			<li class="special">
+				<a href="" ng-click="index()"><span>Home</span></a>
+			</li>
+			<li class="special">
+				<a href="" ng-click="index()"><span>Features</span></a>
+			</li>
+			<li class="special">
+				<a href="" ng-click="login()"><span>Login</span></a>
+			</li>
+			<!--<li class="special">
+				<a href="#menu" class="menuToggle"><span>Menu</span></a>
+				<div id="menu" style="background-color: black">
+					<ul>
+						<li><a href="" ng-click="index()">Home</a></li>
+						<li><a href="" ng-click="signup()">Sign Up</a></li>
+						<li><a href="" ng-click="login()">Login</a></li>
+					</ul>
+				</div>
+			</li>
+			
+		</ul>
+	</nav>
+</header>-->
+
+ <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+       <div class="container">
+          <a class="brand" href="" ng-click="index()">AMPere Accident Reporting System </a>
+          
+          		<div class="nav-collapse">
+					<ul class="nav pull-right">
+						
+						<li class="">						
+							<a href="" ng-click="login()" class="">
+								Already an account?
+							</a>
+							
+						</li>
+						
+						<li class="">						
+							<a href="#" ng-click="index()" class="">
+								<i class="icon-chevron-left"></i>
+								Back to Homepage
+							</a>
+							
+						</li>
+					</ul>
+		
+	</div><!--/.nav-collapse -->	
+       </div>
+    </div>
+ </div>
+          <div class="account-container">
+            <div class="content clearfix">
+              	<form id="edit-profile" class="form-horizontal">
+									 
+										<h3 style="margin-left:40%"><b>Member Signup</b></h3>
+										<br><br>
+										<div class="control-group">											
+											<label class="control-label" for="email"><b>First Name</b></label>
+											<div class="controls">
+												 <input type="text" name="firstname" id="firstname" value="" placeholder="First Name" ng-model="firstname"/>
+											</div> <!-- /controls -->				
+										</div> <!-- /control-group -->
+									
+									
+										<div class="control-group">											
+											<label class="control-label" for="email"><b>Last Name</b></label>
+											<div class="controls">
+												<input type="text" name="lastname" id="lastname" value="" placeholder="Last Name" ng-model="lastname" />
+											</div> <!-- /controls -->				
+										</div> <!-- /control-group -->
+											
+											
+											 <div class="control-group">											
+											<label class="control-label" for="email"><b>Email</b></label>
+											<div class="controls">
+												<input type="email" name="email" id="email" value="" placeholder="Email" ng-model="email"/>
+											</div> <!-- /controls -->				
+										</div> <!-- /control-group -->
+											
+										<div class="control-group">											
+											<label class="control-label" for="password"><b>Password</b></label>
+											<div class="controls">
+											<input type="password" name="password" id="password" value="" placeholder="Password" ng-model="password" />
+											</div> <!-- /controls -->				
+										</div> <!-- /control-group -->
+										
+										
+                                        <div class="control-group">											
+											<label class="control-label" for="cpswd"><b>Confirm Password</b></label>
+											<div class="controls">
+												<input type="password" name="cpswd" id="cpswd" value="" placeholder="Confirm Password" ng-model="cpswd"/>
+                                      		  </div> <!-- /controls -->				
+										</div> <!-- /control-group -->
+										
+										
+										
+										 <div class="control-group">											
+											<label class="control-label" for="cpswd"><b>Emergency Contact</b></label>
+											<div class="controls">
+											<input type="text" name="phone" id="phone" value="" placeholder="Emergency Contact" ng-model="phone"/>
+											  </div> <!-- /controls -->				
+										</div> <!-- /control-group -->
+                                        <br />
+								 
+											<button type="submit" class="btn btn-primary btn-large" value="Sign Up" ng-click ="addUser()"  style="margin-left:40%">Submit</button> 
+									 <div class="alert alert-success col-md-12" id="success-alert1" style="display: none ">
+				<center> <strong> Successful SIgn up.Please login to proceed</strong></center>
+				</div>
+				
+				<div class="alert alert-success col-md-12" id="failure-alert" style="display: none ">
+				<center> <strong> Email ID already exists. Please enter a correct Email. </strong></center>
+				</div>
+
+				
+								</form>
+            </div>
+            <!-- /content -->
+         </div>
+         <!-- /account-container -->
+         
+         <!--
+<section class="wrapper style5">
+<div class="inner">
+		<h4>Sign Up</h4>
+		<form>
+			<div class="row uniform">
+				<div class="6u 12u$(xsmall)">
+					<input type="text" name="firstname" id="firstname" value="" placeholder="First Name" ng-model="firstname"/>
+				</div>
+				<div class="6u$ 12u$(xsmall)">
+					<input type="text" name="lastname" id="lastname" value="" placeholder="Last Name" ng-model="lastname" />
+				</div>
+				<div class="6u 12u$(xsmall)">
+					<input type="password" name="password" id="password" value="" placeholder="Password" ng-model="password" />
+				</div>
+				<div class="6u$ 12u$(xsmall)">
+					<input type="password" name="cpswd" id="cpswd" value="" placeholder="Confirm Password" ng-model="cpswd"/>
+				</div>
+				<div class="6u 12u$(xsmall)">
+					<input type="email" name="email" id="email" value="" placeholder="Email" ng-model="email"/>
+				</div>
+				<div class="6u$ 12u$(xsmall)">
+					<input type="text" name="phone" id="phone" value="" placeholder="Emergency Contact" ng-model="phone"/>
+				</div>
+				
+				
+				<div class="12u$">
+					<ul class="actions">
+						<li><input type="submit" value="Sign Up" class="special" ng-click="addUser()"/></li>
+						<li><input type="reset" value="Reset" /></li>
+					</ul>
+				</div>
+				
+				<div class="alert alert-success col-md-12" id="success-alert1" style="display: none ">
+				<center> <strong> Successful SIgn up.Please login to proceed</strong></center>
+				</div>
+				
+				<div class="alert alert-success col-md-12" id="failure-alert" style="display: none ">
+				<center> <strong> Email ID already exists. Please enter a correct Email. </strong></center>
+				</div>
+
+				
+			</div>
+		</form>
+	</section>-->
+	</div>
+</body>
+</html>
